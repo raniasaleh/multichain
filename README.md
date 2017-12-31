@@ -39,11 +39,12 @@ Compile MultiChain for Ubuntu (64-bit)
 
     ./autogen.sh
     ./configure
+    
     make
 
 Notes
 -----
-
+* To install the libraries in /usr/lib instead of /usr/local/lib use: ./configure --prefix=/usr/lib
 * This will build `multichaind`, `multichain-cli` and `multichain-util` in the `src` directory.
 
 * The release is built with GCC after which `strip multichaind` strings the debug symbols, which reduces the executable size by about 90%.
