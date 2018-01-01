@@ -1,5 +1,5 @@
 
 class multichainlib {
 public:
-  static int connect1();
+  static int connect(char* chainname);
 };

@@ -4,14 +4,10 @@
 #include "chainparams/globals.h"
 #include "utils/util.h"
 
-int main(int argc, char* argv[])
+int multichainlib::connect(char* chainname)
 {
-  return 0;
-}
-int multichainlib::connect1()
-{
-  int argc;
-  char* argv[2];
+    int argc =3;
+    char* argv[3]= {"lib", "create", chainname};
     int err;
     int version,v;
     char fileName[MC_DCT_DB_MAX_PATH];
@@ -225,5 +221,5 @@ int multichainlib::connect1()
         return 1;
     }
 
-    return 1000;
+    return 0;
 }
