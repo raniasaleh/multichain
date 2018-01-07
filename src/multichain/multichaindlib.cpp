@@ -407,7 +407,18 @@ bool AppInit(int argc, char* argv[])
     return fRet;
 }
 
+int multichaindlib::generateBlockchain(char* chainname, char* datadir, char* port, char* rpcport, char* daemon)
+{
+  SetupEnvironment();
 
+
+  int argc =6;
+  char* argv[6]= {"lib", datadir, port, rpcport, chainname,daemon};
+  // Connect bitcoind signal handlers
+  noui_connect();
+
+  return (AppInit(argc, argv) ? 0 : 1);
+}
 int multichaindlib::generateBlockchain(char* chainname)
 {
     SetupEnvironment();
