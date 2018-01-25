@@ -410,10 +410,10 @@ bool AppInit(int argc, char* argv[])
 int multichaindlib::generateBlockchain(char* chainname, char* datadir, char* port, char* rpcport, char* daemon)
 {
   SetupEnvironment();
-
+  std::cout << "datadir..." << datadir ;
 
   int argc =6;
-  char* argv[6]= {"lib", datadir, port, rpcport, chainname,daemon};
+  char* argv[6]= {"lib", chainname, datadir, port, rpcport,daemon};
   // Connect bitcoind signal handlers
   noui_connect();
 
@@ -422,8 +422,6 @@ int multichaindlib::generateBlockchain(char* chainname, char* datadir, char* por
 int multichaindlib::generateBlockchain(char* chainname)
 {
     SetupEnvironment();
-
-
     int argc =3;
     char* argv[3]= {"lib", chainname,"-daemon"};
     // Connect bitcoind signal handlers
